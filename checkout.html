@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Checkout</title>
+    <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+  <div class="ler">
+    <nav>
+      <div class="nav-left">
+        <a href="/index.html">HOME</a>
+        <a href="/shopnow.html">SHOP NOW</a>
+        <a href="#us">ABOUT US</a>
+      </div>
+
+      <div class="nav-center">
+        <span>TRIPLE VOUGUE</span>
+      </div>
+
+      <div class="nav-right">
+        <div class="search-bar">
+          <input type="text" placeholder="Search" />
+          <i class="fas fa-search"></i>
+        </div>
+        <i class="fas fa-bag-shopping"></i>
+      </div>
+    </nav>
+  </div>
+  <div class="super-div">
+ <div class="checkout-container">
+    <!-- LEFT FORM -->
+    <div class="checkout-form">
+      <h2>My Information</h2>
+      <div class="form-group"><input type="email" placeholder="Email address"></div>
+      <div class="form-group"><input type="tel" placeholder="Phone Number"></div>
+      <div class="form-group"><input type="text" placeholder="Address"></div>
+      <div class="form-row">
+        <input type="text" placeholder="City">
+        <input type="text" placeholder="State">
+        <input type="text" placeholder="ZIP Code">
+      </div>
+
+      <hr>
+
+      <h2>How would you like to receive your order?</h2>
+      <div class="delivery-options">
+        <label><input type="radio" name="delivery" value="shipment"> By shipment</label>
+        <label><input type="radio" name="delivery" value="person"> In person</label>
+      </div>
+
+      <!-- SHIPPING DETAILS -->
+      <div id="shippingDetails" class="hidden">
+        <hr>
+        <h2>Shipping Details</h2>
+        <div class="form-group"><input type="text" placeholder="Shipping address"></div>
+        <div class="form-row">
+          <input type="text" placeholder="City">
+          <input type="text" placeholder="State">
+          <input type="text" placeholder="ZIP Code">
+        </div>
+      </div>
+
+      <!-- PICKUP LOCATION -->
+      <div id="pickupLocation" class="hidden">
+        <hr>
+        <h2>Pickup Location</h2>
+        <p><strong>MARIGOLD MALL</strong></p>
+        <p>26,Ijehun Street Off Ikuomola Road,Cement, Bus Stop, Ikeja,Lagos,Nigeria.</p>
+        <p style="color: brown;">Pickup Available from 8 AM to 6 PM</p>
+      </div>
+
+      <hr>
+
+      <h2>Billing Information</h2>
+      <div class="form-group"><input type="text" placeholder="Name on Card"></div>
+      <div class="form-group"><input type="text" placeholder="Debit / Credit Card Number"></div>
+      <div class="form-row">
+        <input type="text" placeholder="Expiration Date (MM/YY)">
+        <input type="text" placeholder="CVV">
+        <input type="text" placeholder="ZIP Code">
+      </div>
+      <div class="form-group"><input type="text" placeholder="Billing Address"></div>
+    </div>
+
+    <!-- RIGHT SUMMARY -->
+    <div class="order-summary">
+      <h3>Order Total</h3>
+      <div class="summary-line"><span>Subtotal</span><span id="subtotal">$100.00</span></div>
+      <div class="summary-line" id="shippingRow"><span>Shipping</span><span id="shipping">$4.50</span></div>
+      <div class="summary-line"><span>Sales Tax</span><span id="tax">$5.00</span></div>
+      <div class="summary-total"><span>Total</span><span id="total">$109.50</span></div>
+      <button class="btn-purchase btn-disabled" id="purchaseBtn" disabled>PURCHASE</button>
+    </div>
+  </div>
+</div>
+  <script>
+    const shippingDetails = document.getElementById("shippingDetails");
+    const pickupLocation = document.getElementById("pickupLocation");
+    const shippingRow = document.getElementById("shippingRow");
+    const radios = document.querySelectorAll('input[name="delivery"]');
+    const totalEl = document.getElementById("total");
+    const purchaseBtn = document.getElementById("purchaseBtn");
+
+    const subtotal = 100.00;
+    const shipping = 4.50;
+    const tax = 5.00;
+
+    function updateTotal(includeShipping) {
+      let total = subtotal + tax + (includeShipping ? shipping : 0);
+      totalEl.textContent = `$${total.toFixed(2)}`;
+    }
+
+    radios.forEach(radio => {
+      radio.addEventListener("change", () => {
+        purchaseBtn.disabled = false;
+        purchaseBtn.classList.remove("btn-disabled");
+
+        if (radio.value === "shipment") {
+          shippingDetails.classList.remove("hidden");
+          pickupLocation.classList.add("hidden");
+          shippingRow.style.display = "flex";
+          updateTotal(true);
+        } else if (radio.value === "person") {
+          pickupLocation.classList.remove("hidden");
+          shippingDetails.classList.add("hidden");
+          shippingRow.style.display = "none";
+          updateTotal(false);
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
