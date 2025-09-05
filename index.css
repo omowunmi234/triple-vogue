@@ -692,3 +692,121 @@ h5{
       padding-right: 5px;
       text-align: center;
     }
+
+    /* Responsive styles for order-review page */
+    @media (max-width: 768px) {
+      .main-box {
+        flex-direction: column !important;
+        width: 95vw !important;
+        margin: 10px auto !important;
+        padding: 20px 0 !important;
+      }
+      
+      .lass {
+        width: 100% !important;
+        margin-bottom: 20px;
+      }
+      
+      .under-tem {
+        width: 100% !important;
+        max-width: none;
+      }
+      
+      .ess {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      .ess > div:first-child {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .lass img {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        margin-bottom: 10px;
+      }
+      
+      .mii {
+        padding: 10px 0;
+        align-items: flex-start;
+      }
+      
+      .ony {
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-top: 10px;
+      }
+      
+      .ony p {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+      
+      .edit_order {
+        width: 100%;
+        max-width: 200px;
+        padding: 10px;
+        margin-top: 10px;
+      }
+      
+      .fill_order {
+        width: 100% !important;
+        padding: 15px;
+        font-size: 16px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .main-box {
+        width: 98vw !important;
+        margin: 5px auto !important;
+        padding: 15px 0 !important;
+      }
+      
+      .under-tem {
+        padding: 15px;
+      }
+      
+      .ess {
+        padding: 15px;
+      }
+      
+      .lass img {
+        max-width: 150px;
+      }
+      
+      .order-item-name {
+        font-size: 1.1rem;
+        font-weight: bold;
+      }
+      
+      .order-item-quantity {
+        font-size: 0.9rem;
+        color: #666;
+      }
+      
+      .ony p {
+        font-size: 1.1rem;
+      }
+      
+      .ony i {
+        font-size: 1.2rem;
+        color: #ff4444;
+        cursor: pointer;
+        padding: 5px;
+      }
+      
+      .fill_order {
+        padding: 12px;
+        font-size: 14px;
+      }
+      
+      .edit_order {
+        padding: 8px;
+        font-size: 14px;
+      }
+    }
