@@ -9,36 +9,7 @@
       font-family: 'Georgia', serif;
     }
 
-    /*.banner {
-      position: relative;
-      background-image: url('images/Rectangle 3.png'); /* Replaceimages\Rectangle 3.png with your image path 
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 2rem;
-      color: white;
-    }
-
-    .banner-content {
-      max-width: 400px;
-      background: rgba(0, 0, 0, 0.4); /* Optional for better text visibility 
-      padding: 2rem;
-      border-radius: 8px;
-    }
-
-    .banner h1 {
-      font-size: 2.5rem;
-      text-transform: lowercase;
-      margin-bottom: 1rem;
-    }
-
-    .banner p {
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
-    }*/
+    
 .shop-now,
 .shop-now:visited,
 .shop-now:focus,
@@ -49,39 +20,9 @@
 .shop-now:hover {
   color:#000
 }
-    .banner button {
-      background: transparent;
-      color: white;
-      border: 1px solid white;
-      padding: 0.75rem 1.5rem;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: background 0.3s;
-      width: 150px;
-    }
+   
 
-    .banner button:hover {
-      background: white;
-      color: black;
-    }
 
-    @media (max-width: 768px) {
-      .banner h1 {
-        font-size: 2rem;
-      }
-      .banner p {
-        font-size: 0.9rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .banner-content {
-        padding: 1rem;
-      }
-      .banner h1 {
-        font-size: 1.6rem;
-      }
-    }
   .shop{
     text-align: center;
     margin: 40px;
@@ -96,6 +37,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    flex-wrap: wrap;
   }
   .buy{
     width: 200px;
@@ -117,6 +59,7 @@
     justify-content: center;
     background-color:#0F0D0D ;
     color: white;
+    flex-wrap: wrap;
   }
   button{
     width: 100px;
@@ -148,6 +91,7 @@ h5{
   flex-direction: row;
   justify-content: space-around;
   padding-top: 100px;
+  flex-wrap: wrap;
 }
 .Jewelry {
   display: flex;
@@ -155,6 +99,7 @@ h5{
   text-align: center;
   justify-content: center;
   padding-top: 50px;
+  flex-wrap: wrap;
 }
 .Jewelry img{
   width: 250px;
@@ -167,6 +112,7 @@ h5{
   flex-direction: row;
   justify-content: space-around;
   padding-top: 100px;
+  flex-wrap: wrap;
 }
 .lry{
   display: flex;
@@ -174,6 +120,7 @@ h5{
   text-align: center;
   justify-content: center;
   padding-top: 50px;
+  flex-wrap: wrap;
 }
 .lry img{
   width: 250px;
@@ -193,6 +140,7 @@ h5{
   text-align: center;
   justify-content: center;
   padding-top: 50px;
+  flex-wrap: wrap;
 }
 .nator img{
   width: 250px;
@@ -404,6 +352,7 @@ h5{
         width: 90vw;
         margin: 2px 20px;
         padding: 35px 0px ;
+        flex-wrap: wrap;
       }
       .under-tem  {
         border:0.5px solid #413d3d ;
@@ -455,8 +404,6 @@ h5{
       .ple p , .ss{
  padding: 10px;
       }
-        
-       
       
       .ple{
         display: flex;
@@ -654,72 +601,88 @@ h5{
     .out{
       text-align: center;
     }
-    .ria{
-  padding: 100px;.banner {
-  position: relative;
-  width: 100%;
+   
+    /* Banner Section */
+.banner {
   height: 100vh; /* full screen height */
-  background: url("images/Rectangle\ 3.png") no-repeat center center/cover;
+  background: url('images/Rectangle\ 3.png') no-repeat center center/cover;
   display: flex;
   align-items: center;
-  padding: 2rem;
-  box-sizing: border-box;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  padding: 0 1rem;
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* dark overlay for text readability */
 }
 
 .banner-content {
-  max-width: 400px;
-  background: rgba(0, 0, 0, 0.6); /* dark overlay box */
-  padding: 1.5rem;
-  border-radius: 10px;
-  color: #fff;
+  position: relative; /* keeps text above overlay */
+  z-index: 1;
+  max-width: 700px;
 }
 
-.banner-content h1 {
-  font-size: 2rem;
+.banner h1 {
+  font-size: 3rem;
   margin-bottom: 1rem;
 }
 
-.banner-content p {
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
+.banner p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .banner {
-    height: auto; /* let content decide height */
-    padding: 4rem 1rem;
-    text-align: center;
-    background-position: top center; /* reposition image */
-  }
+.shop-now {
+  display: inline-block;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
 
-  .banner-content {
-    max-width: 100%;
-    background: rgba(0, 0, 0, 0.5); /* keep readability */
+.shop-now:hover {
+  background: white;
+  color: black;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .banner h1 {
+    font-size: 2rem;
+  }
+  .banner p {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .banner {
+    height: 80vh;
     padding: 1rem;
   }
-
-  .banner-content h1 {
-    font-size: 1.5rem;
+  .banner h1 {
+    font-size: 1.6rem;
   }
-
-  .banner-content p {
+  .banner p {
     font-size: 0.9rem;
   }
-}
-
-@media (max-width: 480px) {
-  .banner-content h1 {
-    font-size: 1.2rem;
-  }
-
-  .banner-content p {
-    font-size: 0.8rem;
+  .shop-now {
+    width: 100%; /* button takes full width on small screens */
+    padding: 0.75rem;
   }
 }
 
-    margin: 10px;
-    }
     .pan{
       color: #000;
       width: 150px;
@@ -729,3 +692,17 @@ h5{
       padding-right: 5px;
       text-align: center;
     }
+ @media (max-width: 812px)  {
+.about{
+    display: flex;
+    flex-direction: column;
+  }
+    #main-box {
+    display: flex !important;
+    flex-direction: column !important;
+    
+  }
+    
+ }
+
+ 

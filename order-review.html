@@ -3,8 +3,17 @@
 
 <head>
   <title>Order Review</title>
->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="second.css">
+  <style>
+    @media (max-width: 812px) {
+      #main-box {
+        display: flex !important;
+        flex-direction: column !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -25,26 +34,23 @@
           <input type="text" placeholder="Search" />
           <i class="fas fa-search"></i>
         </div>
-        <i class="fas fa-bag-shopping"></i>
+        <i class="fa-solid fa-bag-shopping"></i>
       </div>
     </nav>
   </div>
-  <main class="main-box">
+  <main class="main-box" id="main-box">
 
     <div class="lass">
       <h2>Order Review</h2>
       <div class="ess">
         <div>
-          <img src="images/IMG-20250713-WA0133 - Copy (2).jpg">
+          <img src="images/IMG-20250713-WA0133-Copy-2.jpg" alt="Order item image">
           <div class="mii">
             <span class="order-item-name"> Sample Item</span>
             <span class="order-item-quantity">Quantity 1</span>
             <button class="edit_order">EDIT ORDER</button>
           </div>
         </div>
-        
-
-
 
         <div class="ony">
           <p>12,000</p><i class="fas fa-trash"></i>
@@ -55,17 +61,16 @@
       <div class="under-tem">
         <h2>Order Total</h2>
         <div class="ple">
-        <p>Sample item</p>
-        <p>₦12,000</p>
+          <p>Sample item</p>
+          <p>₦12,000</p>
         </div>
         <div class="ss">
-        <p>Subtotal</p>
-        <p>₦12,000</p>
+          <p>Subtotal</p>
+          <p>₦12,000</p>
         </div>
-        
-      <button class="fill_order">FILL OUT ORDER INFO</button>
-      </div>
 
+        <button class="fill_order">FILL OUT ORDER INFO</button>
+      </div>
     </div>
   </main>
 
