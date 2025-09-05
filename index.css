@@ -692,17 +692,3 @@ h5{
       padding-right: 5px;
       text-align: center;
     }
- @media (max-width: 812px)  {
-.about{
-    display: flex;
-    flex-direction: column;
-  }
-    #main-box {
-    display: flex !important;
-    flex-direction: column !important;
-    
-  }
-    
- }
-
- 
